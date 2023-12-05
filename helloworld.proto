@@ -12,10 +12,15 @@ service Greeter {
   rpc SayHello (HelloRequest) returns (HelloReply) {}
 }
 
+message Data {
+  repeated string name = 1;
+}
+
 // The request message containing the user's name.
 message HelloRequest {
   string name = 1;
   repeated string title = 2;
+  repeated Data data = 3;
 }
 
 // The response message containing the greetings
